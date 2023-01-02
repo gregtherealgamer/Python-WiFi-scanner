@@ -1,2 +1,5 @@
-# Python-WiFi-scanner
-This is a Python script that can be used as a WiFi scanner
+The scan_wifi() function begins by running the iwlist command with the scan argument using subprocess.run(). The capture_output argument is set to True so that the output of the command is captured and stored in the stdout attribute of the returned CompletedProcess object. The output is then decoded from bytes to a string using the decode() method.
+
+Next, the output string is split into a list of lines using the split() method, with the newline character ("\n") as the delimiter. The script then iterates through the lines and uses a series of if statements to check for specific keywords that indicate the presence of certain details about the WiFi networks. If a line contains one of these keywords, the relevant details are extracted and stored in the current WiFi network dictionary.
+
+Finally, the script iterates through the list of WiFi network dictionaries and prints the details for each one. The details that are printed include the cell number, SSID, MAC address, frequency, quality, encryption type, bit rates, protocols, and cipher.
